@@ -1,0 +1,31 @@
+<template>
+<lightning-card title="Publisher Component" icon-name="standard:contact">
+<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+<thead>
+	<tr class="slds-line-height_reset">
+		<th class="" scope="col">
+			<div class="slds-truncate" title="Name">Name</div>
+		</th>
+		<th class="" scope="col">
+			<div class="slds-truncate" title="Account Name">Account Name</div>
+		</th>
+		</tr>
+</thead>
+<tbody>
+<template for:each={data} for:item="con">
+<tr key={con.Id}>
+	<th scope="col">
+		<div>{con.Name}</div>
+	</th>
+	<th scope="col">
+	<!--Fire event on Account select -->
+		<a href="javascript:void(0);" data-dev-id={con.AccountId} onclick={handleChange}>
+	<lightning-formatted-text value={con.Account.Name} linkify></lightning-formatted-text>
+		</a>
+	</th>
+</tr>
+</template>
+</tbody>
+</table>
+</lightning-card>
+</template>
