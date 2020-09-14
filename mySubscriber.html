@@ -1,0 +1,16 @@
+<template>
+<template if:true={data}>
+<lightning-card title="Subscriber Component">
+	<template for:each={data} for:item="cas">				 
+		<lightning-card key={cas.Id} title={cas.CaseNumber} icon-name="standard:case">
+		  <div class="caseDetls">
+		  Case No:  {cas.CaseNumber} </br>
+		  Account: {cas.Account.Name} </br>
+		  Status: {cas.Status} </br>
+		  Origin: {cas.Origin}
+		</div> 
+		</lightning-card>
+	</template>
+</lightning-card>
+</template>
+</template>
